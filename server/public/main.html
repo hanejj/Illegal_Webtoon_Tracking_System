@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* 전체 배경 설정 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* 중앙 정렬을 위한 컨테이너 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* 메인 제목 스타일 */
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            padding: 10px;
+            border: 2px solid #b5ddb2; /* 연한 녹색 경계선 */
+            border-radius: 10px;
+            display: inline-block;
+            background-color: #e0f7df; /* 제목 배경색 */
+        }
+
+        /* 웹툰 리스트 스타일 */
+        ul {
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            border: 2px solid #b5ddb2; /* 리스트 경계선 */
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        li {
+            list-style: none;
+            margin: 10px;
+            background-color: #e0f7df; /* 연한 녹색 배경색 */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        li:hover {
+            transform: translateY(-10px);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 이미지 스타일 */
+        .list img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* 웹툰 제목 스타일 */
+        em {
+            display: block;
+            padding: 15px;
+            font-size: 1.2em;
+            color: #555;
+            background-color: #d5f4d2; /* 약간 더 진한 연한 녹색 */
+            border-top: 1px solid #b5ddb2;
+        }
+
+        /* Footer 스타일 */
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #dcdcdc; /* 회색 배경 */
+            color: #555;
+            text-align: center;
+            border-top: 2px solid #dcdcdc; /* 회색 경계선 */
+        }
+
+        footer h2 {
+            margin: 0;
+            font-size: 0.8em; /* 글씨 크기 조정 */
+            font-weight: normal; /* bold 제거 */
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.7em; /* 글씨 크기 조정 */
+            font-weight: normal; /* bold 제거 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Main Page</h1>
+        <ul>
+            <li>
+                <a href="A.html">
+                    <span class="list"><img src="/shark.jpg" width="90" height="90" alt=""></span>
+                    <em>A웹툰</em>
+                </a>
+            </li>
+            <li>
+                <a href="B.html">
+                    <span class="list"><img src="/snake.jpg" width="90" height="90" alt=""></span>
+                    <em>B웹툰</em>
+                </a>
+            </li>
+            <li>
+                <a href="C.html">
+                    <span class="list"><img src="/bird.jpg" width="90" height="90" alt=""></span>
+                    <em>C웹툰</em>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <h2>Team: Air-F1y3r</h2>
+        <p>Graduation Project Output</p>
+    </footer>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDENBFpsdphVF6WpaX2YyNN-PrljveHrsM",
+          authDomain: "legal-cf7bb.firebaseapp.com",
+          projectId: "legal-cf7bb",
+          storageBucket: "legal-cf7bb.appspot.com",
+          messagingSenderId: "463276078471",
+          appId: "1:463276078471:web:df8b437ff98f55a4494f22",
+          measurementId: "G-SQDN3E2VX8"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        console.log(app);
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A웹툰</title>
+    <style>
+        /* 전체 배경 설정 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column; /* 추가: footer와 내용이 수직 정렬되도록 설정 */
+        }
+
+        /* 폼 컨테이너 스타일 */
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #b5ddb2; /* 연한 녹색 경계선 */
+        }
+
+        /* 웹툰 리스트 스타일 */
+        ul {
+            padding: 0;
+            margin: 20px 0;
+            list-style: none;
+        }
+
+        li {
+            margin: 10px 0;
+            background-color: #dff0d8; /* 연한 녹색 배경 */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            background-color: #c8e6c9;
+        }
+
+        .list img {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        em {
+            display: block;
+            padding: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        /* Footer 스타일 */
+        footer {
+            width: 100%;
+            padding: 20px;
+            background-color: #dcdcdc; /* 회색 배경 */
+            color: #555;
+            text-align: center;
+            border-top: 2px solid #dcdcdc; /* 회색 경계선 */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        footer h2 {
+            margin: 0;
+            font-size: 0.8em; /* 글씨 크기 조정 */
+            font-weight: normal; /* bold 제거 */
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.7em; /* 글씨 크기 조정 */
+            font-weight: normal; /* bold 제거 */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>A웹툰</h1>
+        <ul>
+            <li onclick="handleClick('A/img1.png')">
+                <span class="list">
+                    <img src="https://via.placeholder.com/100" width="90" height="90" alt="Clickable Image" id="img1">
+                </span>
+                <em>1화</em>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <h2>Team: Air-F1y3r</h2>
+        <p>Graduation Project Output</p>
+    </footer>
+
+    <script>
+        function handleClick(imgPath) {
+            // 서버로 요청을 보내는 예시
+            fetch("/executeWatermark", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ imgPath: imgPath })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.text();
+            })
+            .then(data => {
+                // 성공 시 다음 페이지로 이동
+                window.location.href = "2embedded.html";
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+            });
+        }
+    </script>
+</body>
+</html>
