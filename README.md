@@ -1,2 +1,16 @@
-# Illegal_Webtoon_Tracking_System
-Graduation Project Output
+# Invisible Watermarking 기반 웹툰 불법 유포자 추적 시스템
+
+## 📌 프로젝트 개요
+- **설명:** 웹툰 플랫폼에서 불법 유포자를 추적할 수 있는 Invisible Watermark 기반 시스템을 개발.
+- **진행 기간:** 2023.12.01-2024.11.30
+- **역할:** 
+  - 워터마킹 알고리즘 고안
+  - 워터마크 추출 코드 구현
+  - 추출 프로그램 개발 및 최종 발표
+
+---
+
+## 🔹 사용 기술 (Tech Stack)
+- Python
+
+---
